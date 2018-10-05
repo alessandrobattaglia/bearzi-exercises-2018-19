@@ -12,7 +12,7 @@ $primes = [];
 
 $count = $i = 1;
 while ($count < OCCURRENCES) {
-    if(isPrime($i)) {
+    if(easyIsPrime($i)) {
         $primes[] = $i;
         $count++;
     }
@@ -22,6 +22,8 @@ while ($count < OCCURRENCES) {
 echo join(' ', $primes);
 
 /**
+ * Check if a number is prime for skilled
+ *
  * @param $num
  * @return bool
  */
@@ -35,4 +37,18 @@ function isPrime($num) {
     }
 
     return $continue;
+}
+
+/**
+ * Check if a number id prime for nobs
+ *
+ * @param $num
+ * @return bool
+ */
+function easyIsPrime($num) {
+    for ($i=2; $i<$num; $i++)
+        if($num%$i===0)
+            return false;
+
+    return true;
 }
