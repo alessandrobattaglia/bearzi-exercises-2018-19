@@ -22,8 +22,6 @@ for ($r=1; $r<=ROWS; $r++) {
  * Format for nobs
  *
  * @param $number
- * @param int $min
- * @param string $space
  * @return string
  */
 function easyFormat($number) {
