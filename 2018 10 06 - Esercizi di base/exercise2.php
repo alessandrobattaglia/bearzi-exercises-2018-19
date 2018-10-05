@@ -12,7 +12,7 @@ $primes = [];
 
 $count = $i = 1;
 while ($count < OCCURRENCES) {
-    if(easyIsPrime($i)) {
+    if(isPrime($i)) {
         $primes[] = $i;
         $count++;
     }
