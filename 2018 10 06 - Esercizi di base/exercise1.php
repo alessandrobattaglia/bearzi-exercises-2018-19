@@ -26,7 +26,7 @@ for ($r=1; $r<=ROWS; $r++) {
  * @param string $space
  * @return string
  */
-function easyFormat($number, $min = 3, $space = ' ') {
+function easyFormat($number) {
     if($number<10)
         return '  ' . $number;
     elseif($number<100)
