@@ -6,20 +6,29 @@
  * Time: 10:06
  */
 
-const OCCURRENCES = 100;
+// isPrimeFast: 0.0095019340515137
+// isPrime:     0.020090818405151
+
+$start = microtime(true);
+
+const OCCURRENCES = 1000;
 
 $primes = [];
 
-$count = $i = 1;
+$count = $i = 2;
 while ($count < OCCURRENCES) {
-    if(isPrime($i)) {
+    if(isPrimeFast($i, $primes)) {
         $primes[] = $i;
         $count++;
     }
     $i++;
 }
 
-echo join(' ', $primes);
+$end = microtime(true);
+
+echo 'Time: ' . ($end - $start) . "\n";
+
+echo join("\n", $primes);
 
 /**
  * Check if a number is prime for skilled
@@ -37,6 +46,27 @@ function isPrime($num) {
     }
 
     return $continue;
+}
+
+/**
+ * Check if a number is prime for faster
+ *
+ * @param int $num
+ * @param array $primes
+ * @return bool
+ */
+function isPrimeFast($num, $primes) {
+    foreach ($primes as $prime) {
+        if($num % $prime == 0) {
+            return false;
+        }
+
+        if($prime > sqrt($num)) {
+            return true;
+        }
+    }
+
+    return true;
 }
 
 /**
