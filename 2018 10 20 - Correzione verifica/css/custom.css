@@ -1,0 +1,14 @@
+body {
+    margin: 50px;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.submit {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
